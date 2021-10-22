@@ -135,7 +135,17 @@ function creatFloatDiv() {
   float.appendChild(button)
 
   button = document.createElement('button')
-  button.innerHTML = '武庙复活'
+  button.innerHTML = '武庙'
+  button.className = 'float'
+  button.onclick = function () {
+    for (let i = 0; i < window.frames.length; i++) {
+      window.frames[i].postMessage('$to 扬州城-武庙', '*')
+    }
+  }
+  float.appendChild(button)
+
+  button = document.createElement('button')
+  button.innerHTML = '复活'
   button.className = 'float'
   button.onclick = function () {
     for (let i = 0; i < window.frames.length; i++) {
@@ -189,7 +199,7 @@ function creatFloatDiv() {
   button.className = 'float'
   button.onclick = function () {
     for (let i = 0; i < window.frames.length; i++) {
-      window.frames[i].postMessage('$usezml 清包', '*')
+      window.frames[i].postMessage('$sellall', '*')
     }
   }
   float.appendChild(button)
@@ -210,6 +220,16 @@ function creatFloatDiv() {
   button.onclick = function () {
     for (let i = 0; i < window.frames.length; i++) {
       window.frames[i].postMessage('$to 襄阳城-广场', '*')
+    }
+  }
+  float.appendChild(button)
+
+  button = document.createElement('button')
+  button.innerHTML = '武道塔'
+  button.className = 'float'
+  button.onclick = function () {
+    for (let i = 0; i < window.frames.length; i++) {
+      window.frames[i].postMessage('jh fam 9 start', '*')
     }
   }
   float.appendChild(button)
@@ -271,6 +291,59 @@ function creatFloatDiv() {
   button.onclick = function () {
     for (let i = 0; i < window.frames.length; i++) {
       window.frames[i].postMessage('$to 丐帮-林间小屋', '*')
+    }
+  }
+  float.appendChild(button)
+
+  br = document.createElement('br')
+  float.appendChild(br)
+
+  button = document.createElement('button')
+  button.innerHTML = 'enter'
+  button.className = 'float'
+  button.onclick = function () {
+    for (let i = 0; i < window.frames.length; i++) {
+      window.frames[i].postMessage('go enter', '*')
+    }
+  }
+  float.appendChild(button)
+  
+  button = document.createElement('button')
+  button.innerHTML = '↑'
+  button.className = 'float'
+  button.onclick = function () {
+    for (let i = 0; i < window.frames.length; i++) {
+      window.frames[i].postMessage('go north', '*')
+    }
+  }
+  float.appendChild(button)
+
+  button = document.createElement('button')
+  button.innerHTML = '↓'
+  button.className = 'float'
+  button.onclick = function () {
+    for (let i = 0; i < window.frames.length; i++) {
+      window.frames[i].postMessage('go south', '*')
+    }
+  }
+  float.appendChild(button)
+
+  button = document.createElement('button')
+  button.innerHTML = '←'
+  button.className = 'float'
+  button.onclick = function () {
+    for (let i = 0; i < window.frames.length; i++) {
+      window.frames[i].postMessage('go west', '*')
+    }
+  }
+  float.appendChild(button)
+
+  button = document.createElement('button')
+  button.innerHTML = '→'
+  button.className = 'float'
+  button.onclick = function () {
+    for (let i = 0; i < window.frames.length; i++) {
+      window.frames[i].postMessage('go east', '*')
     }
   }
   float.appendChild(button)
