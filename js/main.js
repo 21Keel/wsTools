@@ -64,291 +64,63 @@ function creatFloatDiv() {
   }
   var float = document.getElementById('float')
 
-  // todo: 改为数组
-
-  var button = document.createElement('button')
-  button.innerHTML = '停止'
-  button.className = 'float'
-  button.onclick = function () {
-    for (let i = 0; i < window.frames.length; i++) {
-      window.frames[i].postMessage('stopstate', '*')
-    }
+  // todo: 改为对象
+  btnObj = {
+    停止: 'stopstate',
+    修炼: '$zdwk',
+    拾取: '$getall',
+    叫杀: '$killall',
+    回家: '$to 住房-练功房',
+    武庙: '$to 扬州城-武庙',
+    帮派: '$to 帮会-大院',
+    襄阳: '$to 襄阳城-广场',
+    推塔: 'jh fam 9 start',
+    武当: '$to 武当派-后山小院',
+    少林: '$to 少林派-方丈楼',
+    华山: '$to 华山派-客厅',
+    峨眉: '$to 峨眉派-清修洞',
+    逍遥: '$to 逍遥派-地下石室',
+    丐帮: '$to 丐帮-林间小屋',
   }
-  float.appendChild(button)
-
-  button = document.createElement('button')
-  button.innerHTML = '修炼'
-  button.className = 'float'
-  button.onclick = function () {
-    for (let i = 0; i < window.frames.length; i++) {
-      window.frames[i].postMessage('$zdwk', '*')
-    }
+  btnObj2 = {
+    进入: 'go enter',
+    往东: 'go east',
+    往南: 'go south',
+    往西: 'go west',
+    往北: 'go north',
+    武庙复活: 'relive',
+    烧符复活: 'relive locale',
+    清包: '$sellall',
+    装一: '',
   }
-  float.appendChild(button)
 
-  button = document.createElement('button')
-  button.innerHTML = '拾取'
-  button.className = 'float'
-  button.onclick = function () {
-    for (let i = 0; i < window.frames.length; i++) {
-      window.frames[i].postMessage('$getall', '*')
+  for (let key in btnObj) {
+    var button = document.createElement('button')
+    button.innerHTML = key
+    button.className = 'float'
+    button.onclick = function () {
+      for (let i = 0; i < window.frames.length; i++) {
+        window.frames[i].postMessage(btnObj[key], '*')
+      }
     }
+    float.appendChild(button)
   }
-  float.appendChild(button)
 
-//   button = document.createElement('button')
-//   button.innerHTML = '残血*'
-//   button.className = 'float'
-//   button.onclick = function () {
-//     for (let i = 0; i < window.frames.length; i++) {
-//       window.frames[i].postMessage('$usezml 残血', '*')
-//     }
-//   }
-//   float.appendChild(button)
-
-  button = document.createElement('button')
-  button.innerHTML = '叫杀'
-  button.className = 'float'
-  button.onclick = function () {
-    for (let i = 0; i < window.frames.length; i++) {
-      window.frames[i].postMessage('$killall', '*')
-    }
-  }
-  float.appendChild(button)
-
-//   button = document.createElement('button')
-//   button.innerHTML = '关出招*'
-//   button.className = 'float'
-//   button.onclick = function () {
-//     for (let i = 0; i < window.frames.length; i++) {
-//       window.frames[i].postMessage('$usezml 关出招', '*')
-//     }
-//   }
-//   float.appendChild(button)
-
-  button = document.createElement('button')
-  button.innerHTML = '回家'
-  button.className = 'float'
-  button.onclick = function () {
-    for (let i = 0; i < window.frames.length; i++) {
-      window.frames[i].postMessage('$to 住房-练功房', '*')
-    }
-  }
-  float.appendChild(button)
-
-  button = document.createElement('button')
-  button.innerHTML = '武庙'
-  button.className = 'float'
-  button.onclick = function () {
-    for (let i = 0; i < window.frames.length; i++) {
-      window.frames[i].postMessage('$to 扬州城-武庙', '*')
-    }
-  }
-  float.appendChild(button)
-
-  button = document.createElement('button')
-  button.innerHTML = '帮派'
-  button.className = 'float'
-  button.onclick = function () {
-    for (let i = 0; i < window.frames.length; i++) {
-      window.frames[i].postMessage('$to 帮会-大院', '*')
-    }
-  }
-  float.appendChild(button)
-
-  button = document.createElement('button')
-  button.innerHTML = '襄阳'
-  button.className = 'float'
-  button.onclick = function () {
-    for (let i = 0; i < window.frames.length; i++) {
-      window.frames[i].postMessage('$to 襄阳城-广场', '*')
-    }
-  }
-  float.appendChild(button)
-
-  button = document.createElement('button')
-  button.innerHTML = '武道塔'
-  button.className = 'float'
-  button.onclick = function () {
-    for (let i = 0; i < window.frames.length; i++) {
-      window.frames[i].postMessage('jh fam 9 start', '*')
-    }
-  }
-  float.appendChild(button)
-
-  float.appendChild(button)
-  button = document.createElement('button')
-  button.innerHTML = '武当'
-  button.className = 'float'
-  button.onclick = function () {
-    for (let i = 0; i < window.frames.length; i++) {
-      window.frames[i].postMessage('$to 武当派-后山小院', '*')
-    }
-  }
-  float.appendChild(button)
-
-  button = document.createElement('button')
-  button.innerHTML = '少林'
-  button.className = 'float'
-  button.onclick = function () {
-    for (let i = 0; i < window.frames.length; i++) {
-      window.frames[i].postMessage('$to 少林派-方丈楼', '*')
-    }
-  }
-  float.appendChild(button)
-
-  button = document.createElement('button')
-  button.innerHTML = '华山'
-  button.className = 'float'
-  button.onclick = function () {
-    for (let i = 0; i < window.frames.length; i++) {
-      window.frames[i].postMessage('$to 华山派-客厅', '*')
-    }
-  }
-  float.appendChild(button)
-
-  button = document.createElement('button')
-  button.innerHTML = '峨眉'
-  button.className = 'float'
-  button.onclick = function () {
-    for (let i = 0; i < window.frames.length; i++) {
-      window.frames[i].postMessage('$to 峨眉派-清修洞', '*')
-    }
-  }
-  float.appendChild(button)
-
-  button = document.createElement('button')
-  button.innerHTML = '逍遥'
-  button.className = 'float'
-  button.onclick = function () {
-    for (let i = 0; i < window.frames.length; i++) {
-      window.frames[i].postMessage('$to 逍遥派-地下石室', '*')
-    }
-  }
-  float.appendChild(button)
-
-  button = document.createElement('button')
-  button.innerHTML = '丐帮'
-  button.className = 'float'
-  button.onclick = function () {
-    for (let i = 0; i < window.frames.length; i++) {
-      window.frames[i].postMessage('$to 丐帮-林间小屋', '*')
-    }
-  }
-  float.appendChild(button)
-
+  // 换行
   br = document.createElement('br')
   float.appendChild(br)
 
-  button = document.createElement('button')
-  button.innerHTML = 'enter'
-  button.className = 'float'
-  button.onclick = function () {
-    for (let i = 0; i < window.frames.length; i++) {
-      window.frames[i].postMessage('go enter', '*')
+  for (let key in btnObj2) {
+    var button = document.createElement('button')
+    button.innerHTML = key
+    button.className = 'float'
+    button.onclick = function () {
+      for (let i = 0; i < window.frames.length; i++) {
+        window.frames[i].postMessage(btnObj2[key], '*')
+      }
     }
+    float.appendChild(button)
   }
-  float.appendChild(button)
-  
-  button = document.createElement('button')
-  button.innerHTML = '↑'
-  button.className = 'float'
-  button.onclick = function () {
-    for (let i = 0; i < window.frames.length; i++) {
-      window.frames[i].postMessage('go north', '*')
-    }
-  }
-  float.appendChild(button)
-
-  button = document.createElement('button')
-  button.innerHTML = '↓'
-  button.className = 'float'
-  button.onclick = function () {
-    for (let i = 0; i < window.frames.length; i++) {
-      window.frames[i].postMessage('go south', '*')
-    }
-  }
-  float.appendChild(button)
-
-  button = document.createElement('button')
-  button.innerHTML = '←'
-  button.className = 'float'
-  button.onclick = function () {
-    for (let i = 0; i < window.frames.length; i++) {
-      window.frames[i].postMessage('go west', '*')
-    }
-  }
-  float.appendChild(button)
-
-  button = document.createElement('button')
-  button.innerHTML = '→'
-  button.className = 'float'
-  button.onclick = function () {
-    for (let i = 0; i < window.frames.length; i++) {
-      window.frames[i].postMessage('go east', '*')
-    }
-  }
-  float.appendChild(button)
-
-  button = document.createElement('button')
-  button.innerHTML = '复活'
-  button.className = 'float'
-  button.onclick = function () {
-    for (let i = 0; i < window.frames.length; i++) {
-      window.frames[i].postMessage('relive', '*')
-    }
-  }
-  float.appendChild(button)
-
-  button = document.createElement('button')
-  button.innerHTML = '烧符'
-  button.className = 'float'
-  button.onclick = function () {
-    for (let i = 0; i < window.frames.length; i++) {
-      window.frames[i].postMessage('relive locale', '*')
-    }
-  }
-  float.appendChild(button)
-
-  button = document.createElement('button')
-  button.innerHTML = '清包'
-  button.className = 'float'
-  button.onclick = function () {
-    for (let i = 0; i < window.frames.length; i++) {
-      window.frames[i].postMessage('$sellall', '*')
-    }
-  }
-  float.appendChild(button)
-
-  button = document.createElement('button')
-  button.innerHTML = '装一'
-  button.className = 'float'
-  button.onclick = function () {
-    for (let i = 0; i < window.frames.length; i++) {
-      window.frames[i].postMessage('$eqskill 1;$wait 3000;$eq 1', '*')
-    }
-  }
-  float.appendChild(button)
-
-  button = document.createElement('button')
-  button.innerHTML = '装二'
-  button.className = 'float'
-  button.onclick = function () {
-    for (let i = 0; i < window.frames.length; i++) {
-      window.frames[i].postMessage('$eqskill 2;$wait 3000;$eq 2', '*')
-    }
-  }
-  float.appendChild(button)
-
-  button = document.createElement('button')
-  button.innerHTML = '装三'
-  button.className = 'float'
-  button.onclick = function () {
-    for (let i = 0; i < window.frames.length; i++) {
-      window.frames[i].postMessage('$eqskill 3;$wait 3000;$eq 3', '*')
-    }
-  }
-  float.appendChild(button)
 }
 
 function run() {
