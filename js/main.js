@@ -64,6 +64,8 @@ function creatFloatDiv() {
   }
   var float = document.getElementById('float')
 
+  // todo: 改为数组
+
   var button = document.createElement('button')
   button.innerHTML = '停止'
   button.className = 'float'
@@ -140,66 +142,6 @@ function creatFloatDiv() {
   button.onclick = function () {
     for (let i = 0; i < window.frames.length; i++) {
       window.frames[i].postMessage('$to 扬州城-武庙', '*')
-    }
-  }
-  float.appendChild(button)
-
-  button = document.createElement('button')
-  button.innerHTML = '复活'
-  button.className = 'float'
-  button.onclick = function () {
-    for (let i = 0; i < window.frames.length; i++) {
-      window.frames[i].postMessage('relive', '*')
-    }
-  }
-  float.appendChild(button)
-
-  button = document.createElement('button')
-  button.innerHTML = '烧符复活'
-  button.className = 'float'
-  button.onclick = function () {
-    for (let i = 0; i < window.frames.length; i++) {
-      window.frames[i].postMessage('relive locale', '*')
-    }
-  }
-  float.appendChild(button)
-
-//   button = document.createElement('button')
-//   button.innerHTML = '装一'
-//   button.className = 'float'
-//   button.onclick = function () {
-//     for (let i = 0; i < window.frames.length; i++) {
-//       window.frames[i].postMessage('$eqskill 1;$wait 3000;$eq 1', '*')
-//     }
-//   }
-//   float.appendChild(button)
-
-//   button = document.createElement('button')
-//   button.innerHTML = '装二'
-//   button.className = 'float'
-//   button.onclick = function () {
-//     for (let i = 0; i < window.frames.length; i++) {
-//       window.frames[i].postMessage('$eqskill 2;$wait 3000;$eq 2', '*')
-//     }
-//   }
-//   float.appendChild(button)
-
-//   button = document.createElement('button')
-//   button.innerHTML = '装三'
-//   button.className = 'float'
-//   button.onclick = function () {
-//     for (let i = 0; i < window.frames.length; i++) {
-//       window.frames[i].postMessage('$eqskill 3;$wait 3000;$eq 3', '*')
-//     }
-//   }
-//   float.appendChild(button)
-
-  button = document.createElement('button')
-  button.innerHTML = '清包'
-  button.className = 'float'
-  button.onclick = function () {
-    for (let i = 0; i < window.frames.length; i++) {
-      window.frames[i].postMessage('$sellall', '*')
     }
   }
   float.appendChild(button)
@@ -344,6 +286,66 @@ function creatFloatDiv() {
   button.onclick = function () {
     for (let i = 0; i < window.frames.length; i++) {
       window.frames[i].postMessage('go east', '*')
+    }
+  }
+  float.appendChild(button)
+
+  button = document.createElement('button')
+  button.innerHTML = '复活'
+  button.className = 'float'
+  button.onclick = function () {
+    for (let i = 0; i < window.frames.length; i++) {
+      window.frames[i].postMessage('relive', '*')
+    }
+  }
+  float.appendChild(button)
+
+  button = document.createElement('button')
+  button.innerHTML = '烧符'
+  button.className = 'float'
+  button.onclick = function () {
+    for (let i = 0; i < window.frames.length; i++) {
+      window.frames[i].postMessage('relive locale', '*')
+    }
+  }
+  float.appendChild(button)
+
+  button = document.createElement('button')
+  button.innerHTML = '清包'
+  button.className = 'float'
+  button.onclick = function () {
+    for (let i = 0; i < window.frames.length; i++) {
+      window.frames[i].postMessage('$sellall', '*')
+    }
+  }
+  float.appendChild(button)
+
+  button = document.createElement('button')
+  button.innerHTML = '装一'
+  button.className = 'float'
+  button.onclick = function () {
+    for (let i = 0; i < window.frames.length; i++) {
+      window.frames[i].postMessage('$eqskill 1;$wait 3000;$eq 1', '*')
+    }
+  }
+  float.appendChild(button)
+
+  button = document.createElement('button')
+  button.innerHTML = '装二'
+  button.className = 'float'
+  button.onclick = function () {
+    for (let i = 0; i < window.frames.length; i++) {
+      window.frames[i].postMessage('$eqskill 2;$wait 3000;$eq 2', '*')
+    }
+  }
+  float.appendChild(button)
+
+  button = document.createElement('button')
+  button.innerHTML = '装三'
+  button.className = 'float'
+  button.onclick = function () {
+    for (let i = 0; i < window.frames.length; i++) {
+      window.frames[i].postMessage('$eqskill 3;$wait 3000;$eq 3', '*')
     }
   }
   float.appendChild(button)
