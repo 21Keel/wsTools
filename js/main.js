@@ -16,7 +16,7 @@ var prefix = 'game'
 
     var div2 = document.getElementById('button2Area')
     div2.innerHTML =
-      "指定数量：<input id='aid' /> <button id='opa' >开</button>"
+      "<input type='number' id='aid' min='0' style='width:80px;border:none;border-bottom:1px solid #ccc;outline:none;' /> <button id='opa' >开</button>"
 
     var opBtn = document.getElementById('opa')
     opBtn.onclick = function () {
@@ -92,6 +92,9 @@ function creatFloatDiv() {
     烧符复活: 'relive locale',
     清包: '$sellall',
     装一: '',
+    装二: '',
+    装三: '',
+    '一键日常（小号）': '$daily',
   }
 
   for (let key in btnObj) {
