@@ -39,6 +39,12 @@ function send() {
     window.frames[i].postMessage(data, '*')
   }
 }
+function sendShort() {
+  var data = document.getElementById('cmd-short').value
+  for (let i = 0; i < window.frames.length; i++) {
+    window.frames[i].postMessage(data, '*')
+  }
+}
 function flush(idx) {
   document.getElementById('f' + idx).src = `http://${prefix}.wsmud.com/?test`
 }
@@ -56,15 +62,24 @@ function createDuoKaiButton(name, value) {
 }
 
 function creatFloatDiv() {
+  // 显示下拉命令区域
+  var inputArea2 = document.getElementById('inputArea2')
+  inputArea2.style.visibility = 'visible'
+  inputArea2.value = ''
+
   var inputArea = document.getElementById('inputArea')
   inputArea.innerHTML = `指令：<textarea id='data' ></textarea> <button id='sendBtn'>发送</button>`
+
   var sendBtn = document.getElementById('sendBtn')
   sendBtn.onclick = function () {
     send()
   }
+  var sendBtn2 = document.getElementById('sendBtn2')
+  sendBtn2.onclick = function () {
+    sendShort()
+  }
   var float = document.getElementById('float')
 
-  // todo: 改为对象
   btnObj = {
     停止: 'stopstate',
     修炼: '$zdwk',
@@ -81,20 +96,29 @@ function creatFloatDiv() {
     峨眉: '$to 峨眉派-清修洞',
     逍遥: '$to 逍遥派-地下石室',
     丐帮: '$to 丐帮-林间小屋',
-  }
-  btnObj2 = {
-    进入: 'go enter',
-    往东: 'go east',
-    往南: 'go south',
-    往西: 'go west',
-    往北: 'go north',
     武庙复活: 'relive',
     烧符复活: 'relive locale',
     清包: '$sellall',
-    装一: '',
-    装二: '',
-    装三: '',
     '一键日常（小号）': '$daily',
+    // 可以这样插入流程
+    测试: `//flow
+    $to 扬州城-武庙
+    pty 破晓是猪
+    `
+  }
+  btnObj2 = {
+    // 进入: 'go enter',
+    // 往东: 'go east',
+    // 往南: 'go south',
+    // 往西: 'go west',
+    // 往北: 'go north',
+    // 武庙复活: 'relive',
+    // 烧符复活: 'relive locale',
+    // 清包: '$sellall',
+    // 装一: '',
+    // 装二: '',
+    // 装三: '',
+    // '一键日常（小号）': '$daily',
   }
 
   for (let key in btnObj) {
@@ -124,6 +148,26 @@ function creatFloatDiv() {
     }
     float.appendChild(button)
   }
+
+  // 短命令列表
+  var cmdList = [
+    'stopstate',
+    'dazuo',
+    'go east',
+    'go west',
+    'go north',
+    'go south',
+    '$to 扬州城-武庙',
+    '$daily',
+  ]
+
+  var cmdBox = document.getElementById('cmd-list')
+  cmdList.map(d => {
+    let item = document.createElement('option')
+    item.value = d
+    cmdBox.appendChild(item)
+  })
+  
 }
 
 function run() {
