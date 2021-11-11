@@ -82,43 +82,41 @@ function creatFloatDiv() {
 
   btnObj = {
     停止: 'stopstate',
-    修炼: '$zdwk',
+    挖矿: '$zdwk',
     拾取: '$getall',
     叫杀: '$killall',
+    清包: '$sellall',
     回家: '$to 住房-练功房',
-    武庙: '$to 扬州城-武庙',
-    帮派: '$to 帮会-大院',
-    襄阳: '$to 襄阳城-广场',
-    推塔: 'jh fam 9 start',
+    帮会: '$to 帮会-练功房',
     武当: '$to 武当派-后山小院',
     少林: '$to 少林派-方丈楼',
     华山: '$to 华山派-客厅',
     峨眉: '$to 峨眉派-清修洞',
     逍遥: '$to 逍遥派-地下石室',
     丐帮: '$to 丐帮-林间小屋',
+    武道塔: '$to 武道塔',
+    襄阳: '$to 襄阳城-广场',
+    战斗装: '$eqskill 战斗;$eq 战斗',
+    练习装: '$eqskill 练习;$eq 练习',
+    打橙装: '$eqskill 打橙;$eq 打橙',
+    武庙: `//flow
+      $to 扬州城-武庙;
+      @liaoshang;
+      @dazuo;`,
     武庙复活: 'relive',
-    烧符复活: 'relive locale',
-    清包: '$sellall',
-    '一键日常（小号）': '$daily',
-    // 可以这样插入流程
-    测试: `//flow
-    $to 扬州城-武庙
-    pty 破晓是猪
-    `
+    原地复活: 'relive locale',
+    测试伤害: `//low
+      $to 武当派-练功房
+      kill {r木头人}
+      @await 60000
+      go east`,
   }
   btnObj2 = {
-    // 进入: 'go enter',
-    // 往东: 'go east',
-    // 往南: 'go south',
-    // 往西: 'go west',
-    // 往北: 'go north',
-    // 武庙复活: 'relive',
-    // 烧符复活: 'relive locale',
-    // 清包: '$sellall',
-    // 装一: '',
-    // 装二: '',
-    // 装三: '',
-    // '一键日常（小号）': '$daily',
+    一键日常: '$daily',
+    看当铺: '$to 扬州城-当铺;list {r唐楠}',
+    扫20温府: 'cr cd/wen/damen 0 20',
+    摸橙装: '$eqskill 摸橙;$eq 摸橙',
+    武当脱战: 'go south',
   }
 
   for (let key in btnObj) {
