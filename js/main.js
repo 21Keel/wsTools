@@ -85,7 +85,7 @@ function creatFloatDiv() {
     挖矿: '$zdwk',
     拾取: '$getall',
     叫杀: '$killall',
-    清包: '$sellall',
+    清包: `$sellall`,
     回家: '$to 住房-练功房',
     帮会: '$to 帮会-练功房',
     武当: '$to 武当派-后山小院',
@@ -98,25 +98,27 @@ function creatFloatDiv() {
     襄阳: '$to 襄阳城-广场',
     战斗装: '$eqskill 战斗;$eq 战斗',
     练习装: '$eqskill 练习;$eq 练习',
-    打橙装: '$eqskill 打橙;$eq 打橙',
     武庙: `//flow
       $to 扬州城-武庙;
       @liaoshang;
       @dazuo;`,
     武庙复活: 'relive',
     原地复活: 'relive locale',
-    测试伤害: `//low
+    测试伤害: `//flow
       $to 武当派-练功房
       kill {r木头人}
       @await 60000
       go east`,
   }
   btnObj2 = {
-    一键日常: '$daily',
-    看当铺: '$to 扬州城-当铺;list {r唐楠}',
+    一键日常: '$daily;$wait 300000;$zdwk',
+    看当铺: `//flow
+      $to 扬州城-当铺;
+      list {r唐楠}`,
     扫20温府: 'cr cd/wen/damen 0 20',
     摸橙装: '$eqskill 摸橙;$eq 摸橙',
     武当脱战: 'go south',
+    卖药: 'tm 待更新', 
   }
 
   for (let key in btnObj) {
