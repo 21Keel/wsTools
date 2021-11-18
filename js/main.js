@@ -189,7 +189,7 @@ function run() {
     if (auto) iframe.src = `http://${prefix}.wsmud.com/?autoLogin=${auto}`
     else iframe.src = `http://${prefix}.wsmud.com/?test`
 
-    var rbtn = `<button  id="btn" onclick="flush(${i})">刷</button>`
+    var rbtn = `<button  id="btn" class="sx-btn" onclick="flush(${i})">刷</button>`
 
     rbtn[i] = document.createElement('button')
     rbtn[i].innerHTML = '刷' + i

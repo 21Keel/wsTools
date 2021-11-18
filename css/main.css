@@ -64,3 +64,10 @@ iframe {
 .btn {
 	margin: 0px 5px 4px 5px;
 }
+
+/* 刷新按钮 */
+.sx-btn {
+	float: right;
+	margin-top: 33em;
+	margin-right: 3em;
+}
