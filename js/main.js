@@ -1,4 +1,5 @@
 var count = 0
+var is4x = false
 var prefix = 'game'
 ;(function () {
   let r = getQueryString('c')
@@ -13,6 +14,14 @@ var prefix = 'game'
     div.appendChild(createDuoKaiButton('四开', 4))
     div.appendChild(createDuoKaiButton('五开', 5))
     div.appendChild(createDuoKaiButton('十开', 10))
+
+    var x4 = document.createElement('button')
+    x4.type = 'button'
+    x4.onclick = function () {
+      is4x = true
+    }
+    x4.innerHTML = "一行四个"
+    div.appendChild(x4)
 
     var div2 = document.getElementById('button2Area')
     div2.innerHTML =
@@ -111,14 +120,14 @@ function creatFloatDiv() {
       go east`,
   }
   btnObj2 = {
-    一键日常: '$daily;$wait 300000;$zdwk',
-    看当铺: `//flow
-      $to 扬州城-当铺;
-      list {r唐楠}`,
-    扫20温府: 'cr cd/wen/damen 0 20',
-    摸橙装: '$eqskill 摸橙;$eq 摸橙',
-    武当脱战: 'go south',
-    卖药: 'tm 待更新', 
+  //   一键日常: '$daily;$wait 300000;$zdwk',
+  //   看当铺: `//flow
+  //     $to 扬州城-当铺;
+  //     list {r唐楠}`,
+  //   扫20温府: 'cr cd/wen/damen 0 20',
+  //   摸橙装: '$eqskill 摸橙;$eq 摸橙',
+  //   武当脱战: 'go south',
+  //   卖药: 'tm 待更新', 
   }
 
   for (let key in btnObj) {
@@ -180,7 +189,7 @@ function run() {
   iframeArea.innerHTML = ''
   for (var i = 1; i <= count; i++) {
     var box = document.createElement('div')
-    box.className = 'big_box'
+    box.className = is4x ? 'big_box_2' : 'big_box'
     box.id = 'box' + i
 
     var iframe = document.createElement('iframe')

@@ -23,6 +23,17 @@ button {
 	overflow: hidden;
 }
 
+.big_box_2 {
+	min-width: 35em;
+	width: 25%;
+	height: calc(100vh - 50px);
+	;
+		position: relative;
+	line-height: 60em;
+	float: left;
+	overflow: hidden;
+}
+
 .small_box {
 	width: 10em;
 	height: 15em;
