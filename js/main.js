@@ -13,15 +13,25 @@ var prefix = 'game'
     div.appendChild(createDuoKaiButton('三开', 3))
     div.appendChild(createDuoKaiButton('四开', 4))
     div.appendChild(createDuoKaiButton('五开', 5))
+    div.appendChild(createDuoKaiButton('八开', 8))
     div.appendChild(createDuoKaiButton('十开', 10))
+
+    is4x = true
 
     var x4 = document.createElement('button')
     x4.type = 'button'
     x4.onclick = function () {
       is4x = true
     }
-    x4.innerHTML = "一行四个"
+    x4.innerHTML = "一行四个（默认）"
     div.appendChild(x4)
+    var x5 = document.createElement('button')
+    x5.type = 'button'
+    x5.onclick = function () {
+      is4x = false
+    }
+    x5.innerHTML = "一行五个"
+    div.appendChild(x5)
 
     var div2 = document.getElementById('button2Area')
     div2.innerHTML =
@@ -94,7 +104,7 @@ function creatFloatDiv() {
     挖矿: '$zdwk',
     拾取: '$getall',
     叫杀: '$killall',
-    清包: `$sellall`,
+    清包: `$sellall;$wait 10000;$fenjie2`,
     回家: '$to 住房-练功房',
     帮会: '$to 帮会-练功房',
     武当: '$to 武当派-后山小院',
@@ -107,10 +117,7 @@ function creatFloatDiv() {
     襄阳: '$to 襄阳城-广场',
     战斗装: '$eqskill 战斗;$eq 战斗',
     练习装: '$eqskill 练习;$eq 练习',
-    武庙: `//flow
-      $to 扬州城-武庙;
-      @liaoshang;
-      @dazuo;`,
+    武庙: '$to 扬州城-武庙',
     武庙复活: 'relive',
     原地复活: 'relive locale',
     测试伤害: `//flow
