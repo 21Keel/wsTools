@@ -65,7 +65,7 @@ function sendShort() {
   }
 }
 function flush(idx) {
-  document.getElementById('f' + idx).src = `http://${prefix}.wsmud.com/?test`
+  document.getElementById('f' + idx).src = `http://${prefix}.wamud.com/?test`
 }
 
 function createDuoKaiButton(name, value) {
@@ -202,8 +202,8 @@ function run() {
     var iframe = document.createElement('iframe')
     iframe.id = 'f' + i
     let auto = getQueryString(i)
-    if (auto) iframe.src = `http://${prefix}.wsmud.com/?autoLogin=${auto}`
-    else iframe.src = `http://${prefix}.wsmud.com/?test`
+    if (auto) iframe.src = `http://${prefix}.wamud.com/?autoLogin=${auto}`
+    else iframe.src = `http://${prefix}.wamud.com/?test`
 
     var rbtn = `<button  id="btn" class="sx-btn" onclick="flush(${i})">刷</button>`
 
